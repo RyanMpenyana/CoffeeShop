@@ -1,15 +1,16 @@
-import React from 'react'
 import styled from 'styled-components'
-import Icon from '../assets/wallpaperflare.com_wallpaper.jpg'
+import Nav from './Nav'
 
 export const HeaderContainer = styled.div`
-    
-
+    width : 100%;
+    display : flex;
+    height : 20px;
+    align-content : center
 `
 const Header = () => {
   return (
     <HeaderContainer>
-    <img width={200} src={Icon} alt="" />
+        <Nav/>
     </HeaderContainer>
   )
 }

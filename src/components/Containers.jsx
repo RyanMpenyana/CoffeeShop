@@ -13,18 +13,22 @@ export const Center = styled.div`
     `
     export const Button = styled.button`
     text-align : center;
+    display : flex;
+    justify-content : center;
+    align-content : center;
     width : 100%;
     padding : 15px 20px;
     border : none;
     font-size : 1.5rem;
     font-weight : 600;    
     background-color : #F5F3F2;
-
+    gap : 10px;
+    transition : 1s ease ;
 
     &:hover{
     background-color : #745039e5;
-    color: white
-    
+    color: white;
+    cursor : pointer;
     }
     `
     export const Card = styled.div`

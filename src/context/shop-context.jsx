@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createContext } from 'react'
 import { CoffeeList } from '../MockData'
 
+
 export const ShopContext = createContext(null)
 
 const getDefaultCart = () => {
@@ -16,16 +17,26 @@ const getDefaultCart = () => {
 
 const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart())
+    const [isOpen , setIsOpen] = useState(false)
+    const [amount, setAmount] = useState(0)
 
     //this add to cart function takes itemid as parameter and sets the cart
     const AddToCart = (itemId) => {
         setCartItems((prevCartItems) => ({ ...prevCartItems, [itemId]: prevCartItems[itemId] + 1}))
+        setAmount(prev => prev + 1)
     }
     const removeFromCart = (itemId) => {
-        setCartItems((prevCartItems) => ({ ...prevCartItems, [itemId]: prevCartItems - 1}))
+        setCartItems((prevCartItems) => ({ ...prevCartItems, [itemId]: prevCartItems[itemId] - 1}))
     }
-     console.log(cartItems)
-    const contextValue = {cartItems, AddToCart,removeFromCart}
+    const handleCartOpen = () => {
+        if(!isOpen){
+            setIsOpen(true)
+        }else{
+            setIsOpen(false)
+        }
+        console.log(isOpen)
+    }
+    const contextValue = {cartItems, AddToCart,removeFromCart, isOpen, handleCartOpen, amount}
   return (
     <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
   )

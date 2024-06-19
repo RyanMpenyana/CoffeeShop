@@ -60,8 +60,17 @@ export const CoffeeList = [
 
 
 
-const plainObject = {}
-
-plainObject['name'] = 1 ;
-console.log(plainObject['name'])
-console.log(plainObject)
+export const CoffeeWorld = [
+{
+    id : 9,
+    image : 'https://images.unsplash.com/photo-1558655894-a07f6a01f7fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+},
+{
+    id : 2,
+    image : 'https://images.unsplash.com/photo-1589879171634-dc628cc021f9?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+},
+{
+    id : 3,
+    image : 'https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+}
+]

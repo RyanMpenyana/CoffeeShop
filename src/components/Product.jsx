@@ -3,38 +3,34 @@ import styled from 'styled-components';
 import { ShopContext } from "../context/shop-context";
 import { useContext } from "react";
 import CART from '../assets/card-icon.svg'
+import { ShoppingCartSimple } from "@phosphor-icons/react";
 
 export const Prices = styled.div`
     display: flex;
     width: 100%;
     justify-content: end;
 `;
-
+export const ProductName = styled.div`
+    font-weight : 600;
+`
 const Product = ({item}) => {
     
     const {AddToCart, cartItems} = useContext(ShopContext)
 
     const Quantity = cartItems[item.id] 
-
-    // const handleAddToCart = (e) => {
-    //     e.preventDefault()
-    //     onClick(item);
-    // }
-    // console.log(item.id)
-
     return (
         <Card >
-                <div>
                     <img src={item.image} alt="img" width={"100%"} />
-                    <p>{item.name}</p>
-                </div>
+                <ProductName style={{textAlign : 'left'}}>
+                    {item.name}
+                </ProductName>
                 <Prices>
                     <p>${item.pricePerkg}</p>
                     <p>${item.price}</p>
                 </Prices>
                 <div>
                     <Button onClick={() => AddToCart(item.id)} type="submit">
-                       <span><img src={CART} width={30} alt="" /></span> Add to Cart {Quantity > 0 && <>({ Quantity})</>}
+                       <span><ShoppingCartSimple style={{fontSize : '25px'}}/></span> Add to Cart {Quantity > 0 && <>({ Quantity})</>}
                     </Button>
                 </div>
         </Card>

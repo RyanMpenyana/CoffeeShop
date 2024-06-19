@@ -13,13 +13,13 @@ function App() {
     <ShopContextProvider>
     <CartOverlay/>
         <Header/>
-    <Center>
         <Router>
             <Routes>
                 <Route path="/" element={<Landing/>} />
-                <Route path="/products" element={<ProductsPage/>} />
             </Routes>
         </Router>
+    <Center>
+        <ProductsPage/>
     </Center>
     <Footer/>
     </ShopContextProvider>
