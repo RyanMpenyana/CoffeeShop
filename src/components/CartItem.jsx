@@ -6,10 +6,22 @@ const CartControls = styled.div`
     display: flex;
     justify-content : right
     
+    `
+const CartItemContainer = styled.div`
+    box-shadow :2px 2px 2px 2px #ccc;
+    margin : 10px;
+    padding : 10px 30px;
+    border : none;
+    transition : 1s ease-in;
+
+    &:hover{
+        transition : scaleY(20px)
+    }
+    
 `
 const CartItem = ({item}) => {
     const {AddToCart,cartItems,removeFromCart} = useContext(ShopContext)
-    return(<div key={item.key}>
+    return(<CartItemContainer key={item.key}>
         <img src={item.image} alt="productImage" width={50} />
                         <div>
                             <h4>{item.name}</h4>
@@ -22,7 +34,7 @@ const CartItem = ({item}) => {
                         <div>
                         <p>{item.price}</p>
                         </div>
-    </div>)
+    </CartItemContainer>)
 }
 
 export default CartItem;

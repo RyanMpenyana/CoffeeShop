@@ -30,9 +30,9 @@ export const H1 = styled.h1`
 `;
 
 const ProductsPage = () => {
-    const [cart] = useState([])
     return (
         <Section>
+            <Cart  />
             <BackgroundDiv/>
             <H1>High Quality Coffee</H1>
             <ProductsContainer>
@@ -47,7 +47,6 @@ const ProductsPage = () => {
                 
             </FlexDiv>
             <H1>Around The Coffee World</H1>
-            <Cart items={cart} />
         </Section>
     );
 };
@@ -79,6 +78,7 @@ const First = styled.div`
 const BG = styled.div`
 margin-top : 40px;
     display : flex;
+    gap : 25px;
     height : 40vh;
 `
 const BackgroundDiv = () => {
@@ -99,4 +99,16 @@ const BackgroundDiv = () => {
             </First>
         </BG>
     )
+}
+
+
+const obj = {
+    greeting : {
+        hello : 'kim'
+    }
+}
+
+
+for (let ob in obj){
+    console.log(obj[ob].hello)
 }
