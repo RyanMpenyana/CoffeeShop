@@ -41,6 +41,11 @@ const QuantityDiv = styled.div`
     border : none;
     outline : none;
 `
+const Accessibility = styled.div`
+    display : flex;
+    gap : 10px;
+    align-content :center;
+`
 const Nav = () => {
     const {handleCartOpen, amount} = useContext(ShopContext)
   return (
@@ -52,13 +57,15 @@ const Nav = () => {
             <MagnifyingGlass/>
             <Input type="text" />
         </SearchDiv>
-        <div>
+        <Accessibility>
+            <div>
             <p>Coffee Gallery+</p>
-        </div>
+            </div>
         <div><p>drop your image</p></div>
         <QuantityDiv>{amount}</QuantityDiv>
-        <div><ShoppingCart onClick={() => handleCartOpen()} size={30}/></div>
+        <div><ShoppingCart onClick={() => handleCartOpen()} size={25}/></div>
         <div><UserCheck/></div>
+        </Accessibility>
     </NavContainer>
   )
 }

@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 export const Center = styled.div`
     max-width : 1400px;
-    margin : 0 15%;
+    padding : auto;
+    margin : 0 auto;
     height : 100%;
     color:#522C06;
+    display : flex;
+    justify-content : center;
     `
     export const FlexDiv = styled.div`
     display : flex;

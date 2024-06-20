@@ -34,7 +34,6 @@ const ShopContextProvider = (props) => {
         }else{
             setIsOpen(false)
         }
-        console.log(isOpen)
     }
     const contextValue = {cartItems, AddToCart,removeFromCart, isOpen, handleCartOpen, amount}
   return (
